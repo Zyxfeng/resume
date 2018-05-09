@@ -1,0 +1,250 @@
+/* 引入依赖 */
+/*
+    * Busy 收集 整理
+ */
+/*雅虎（YUI 3）reset*/
+/*Normalize.css*/
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  border: none;
+}
+input,
+select,
+textarea {
+  outline: none;
+  border: none;
+  background: none;
+}
+textarea {
+  resize: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font: 500 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
+  background-color: #ddd;
+}
+@media print {
+  body {
+    font: 500 10px PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
+  }
+  body a {
+    text-decoration: underline;
+  }
+}
+@media not print {
+  .only-print {
+    display: none !important;
+  }
+}
+@media print {
+  .only-screen {
+    display: none !important;
+  }
+}
+.mainBody {
+  width: 90%;
+  max-width: 960px;
+  margin: 3em auto;
+  border-radius: 3px;
+  box-shadow: 5px 7px 10px 10px #999;
+  background-color: #84cad7;
+}
+@media print {
+  .mainBody {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 680px) {
+  .mainBody {
+    width: 100%;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+  }
+}
+.mainBody header {
+  display: flex;
+  align-items: center;
+  height: 110px;
+  padding: 0 10%;
+  background-color: #f3fafb;
+}
+@media print {
+  .mainBody header {
+    height: 46px;
+    padding: 0 7%;
+  }
+}
+@media screen and (max-width: 680px) {
+  .mainBody header {
+    height: 60px;
+    padding: 0 7%;
+  }
+}
+.mainBody header .null_print {
+  flex: 1;
+}
+.mainBody header #bigName {
+  color: #84cad7;
+}
+.mainBody .content {
+  margin: 0 auto;
+  padding: 5% 10%;
+}
+@media print {
+  .mainBody .content {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 680px) {
+  .mainBody .content {
+    padding: 3% 0;
+  }
+}
+.term h3 {
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+}
+@media print {
+  .term h3 {
+    height: 22px;
+    line-height: 22px;
+  }
+}
+.term h3 .icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #000;
+  border-radius: 50%;
+}
+@media print {
+  .term h3 .icon {
+    height: 15px;
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 680px) {
+  .term h3 .icon {
+    width: 5px;
+    height: 5px;
+    visibility: hidden;
+  }
+}
+.term h3 .icon .line {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 15px;
+  height: 2px;
+  background-color: #000;
+}
+.term h3 .icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.term h3 .title {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 20px;
+  border-bottom: 2px solid #000;
+}
+@media print {
+  .term h3 .title {
+    border: none;
+  }
+}
+.term .main {
+  position: relative;
+  margin: 10px 50px;
+}
+@media print {
+  .term .main {
+    line-height: 20px;
+    margin: 5px 50px;
+  }
+}
+.term .main .emphasis {
+  color: #d0648a;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #f2bed1;
+}
+.term .main .fa {
+  margin-right: 8px;
+}
+.term .main .con {
+  margin-left: 32px;
+}
+.term .main .heading {
+  display: flex;
+  align-content: center;
+}
+@media screen and (max-width: 780px) {
+  .term .main .heading {
+    flex-direction: column;
+  }
+}
+.term .main .heading .bold {
+  display: block;
+}
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  line-height: 60px;
+  padding: 0 10%;
+  color: #000;
+}
+.copyright p {
+  margin: 0;
+}
+.copyright .wechat {
+  position: relative;
+  cursor: pointer;
+}
+.copyright .wechat .wechatPage {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  box-shadow: 6px 16px 26px -5px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: scale(0.01);
+  transform-origin: 95% 95%;
+  transition: all .6;
+}
+.copyright .wechat .wechatPage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.copyright .wechat .wechatPage:after {
+  content: '';
+  position: absolute;
+  bottom: -24px;
+  right: 10px;
+  border-style: solid;
+  border-color: #637368 transparent transparent transparent;
+  border-width: 12px;
+}
+.copyright .wechat:hover .wechatPage {
+  transform: scale(1);
+  opacity: 1;
+}
